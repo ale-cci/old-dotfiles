@@ -1,7 +1,7 @@
-
+"
 " =/ Alec Vimrc /=
 "
-set exrc
+
 autocmd! BufWritePost init.vim source %
 autocmd BufWritePost .Xresources !xrdb %
 
@@ -22,6 +22,8 @@ Plug 'tpope/vim-commentary'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 
+" i3 syntax
+Plug 'PotatoesMaster/i3-vim-syntax'
 call plug#end()
 
 let g:airline_powerline_fonts = 1
@@ -87,7 +89,7 @@ noremap <C-v> "+P
 inoremap <C-v> <Esc>"+P
 
 " Save without exiting insert mode
-nmap <C-X> :!execute %<cr>
+nmap <C-X> :w<cr>:!compiler %<cr>
 " inoremap <C-i> <Esc>I
 " inoremap <C-a> <Esc>A
 
@@ -107,4 +109,5 @@ set scrolloff=5
 nnoremap Q <nop>
 map q: <Nop>
 
+set exrc
 set secure
