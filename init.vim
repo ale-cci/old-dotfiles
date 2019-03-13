@@ -35,7 +35,7 @@ filetype plugin indent on
 set mouse=a
 set t_Co=256
 colorscheme gruvbox
-set encoding=utf-8
+set encoding=utf8
 
 syntax on
 set undolevels=700
