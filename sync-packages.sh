@@ -4,16 +4,23 @@
 #=======> Official packages <=======#
 sudo pacman -S \
 	android-tools\
+	i3blocks\
+	i3-wm\
+	i3status\
 	ncurses\
 	neovim\
-	rsync\
-	zsh\
-	xorg-xbacklight\
-	xorg-xsetroot\
 	python\
+	rsync\
+	tmux\
 	xclip\
-	i3-wm\
-	i3-blocks\
+	xf86-input-libinput\
+	xorg-server\
+	xf86-video-intel\
+	xorg-xinit\
+	xorg-xbacklight\
+	xorg-xsetxkbmap\
+	xwallpaper\
+	zsh
 
 
 

@@ -9,3 +9,6 @@ export READER="zathura"
 
 export SUDO_ASKPASS="$HOME/.scripts/tools/dmenupass"
 
+# Project Directories
+export BEIFI_DIR="$HOME/Desktop/membership"
+

@@ -87,7 +87,7 @@ alias vimrc="$EDITOR ~/.config/nvim/init.vim"
 alias tarx="tar -xvzf"
 alias xconfig="$EDITOR ~/.Xresources"
 
-alias cbeifi="cd ~/Desktop/membership"
+alias cbeifi="cd $BEIFI_DIR"
 alias capex="cd ~/Desktop/al_stats"
 alias cscripts="cd ~/Desktop/py_scripts"
 alias cpy="rsync -rh --info=progress2"

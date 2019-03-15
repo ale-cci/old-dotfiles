@@ -15,8 +15,10 @@ Plug 'terryma/vim-smooth-scroll'
 Plug 'vim-syntastic/syntastic'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'morhetz/gruvbox'
 Plug 'tpope/vim-commentary'
+
+" Colorscheme
+Plug 'morhetz/gruvbox'
 
 " JSX syntax support
 Plug 'pangloss/vim-javascript'
@@ -53,6 +55,11 @@ map <C-k> <C-w>k
 map <C-l> <C-w>l
 map <C-h> <C-w>h
 
+map <silent> <c-m-y> :vertical resize +2<cr>
+map <silent> <c-m-o> :vertical resize -2<cr>
+map <silent> <c-m-u> :resize +2<cr>
+map <silent> <c-m-i> :resize -2<cr>
+
 " Center matched word in the middle of the screen
 map n nzz
 map N Nzz
@@ -77,21 +84,26 @@ noremap <Down> <Nop>
 " Auto-Delete trailing whitespace on save
 autocmd BufWritePre * %s/\s\+$//e
 
-let scroll_duration=10
-nnoremap <silent> <c-u> :call smooth_scroll#up(&scroll, scroll_duration, 2)<cr>
-nnoremap <silent> <c-d> :call smooth_scroll#down(&scroll, scroll_duration, 2)<cr>
-nnoremap <silent> <c-b> :call smooth_scroll#up(&scroll, 2*scroll_duration, 4)<cr>
-nnoremap <silent> <c-f> :call smooth_scroll#down(&scroll, 2*scroll_duration, 4)<cr>
+let scroll_duration=6
+nnoremap <silent> <c-m-k> :call smooth_scroll#up(&scroll, scroll_duration, 2)<cr>
+nnoremap <silent> <c-m-j> :call smooth_scroll#down(&scroll, scroll_duration, 2)<cr>
 
-" Copy and paste from vim
-vnoremap <C-c> "*y :let @+=@*<CR>
-noremap <C-v> "+P
-inoremap <C-v> <Esc>"+P
+" Remove default page scrolling behaviourr
+nnoremap <c-u> <nop>
+nnoremap <c-d> <nop>
+nnoremap <c-f> <nop>
+nnoremap <c-b> <nop>
 
-" Save without exiting insert mode
+set clipboard=unnamed
+
+set wildignore+=*.pdf,*.psd
+set wildignore+=*.bmp,*.gif,*.ico,*.jpg,*.png,*.ico
+set wildignore+=node_modules/*,bower_components/*
+nnoremap <c-g> :tabe **/*
+
+" File Compiler
 nmap <C-X> :w<cr>:!compiler %<cr>
-" inoremap <C-i> <Esc>I
-" inoremap <C-a> <Esc>A
+
 
 " Split window to right by default
 set spr
