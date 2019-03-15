@@ -14,7 +14,6 @@ sudo pacman -S \
 	xclip\
 	i3-wm\
 	i3-blocks\
-	i3-status
 
 
 
