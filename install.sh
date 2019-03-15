@@ -5,7 +5,8 @@
 
 # Creating Symlinks
 ln -sn $PWD/.Xresources ~/.Xresources
-ln -sn $PWD/.Xresources ~/.zshrc
+ln -sn $PWD/.zshrc ~/.zshrc
+ln -sn $PWD/.zshenv ~/.zshenv
 
 mkdir -p ~/.config/nvim
 ln -sn $PWD/init.vim  ~/.config/nvim/init.vim

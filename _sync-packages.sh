@@ -1,6 +1,7 @@
 #!/bin/bash
 
-# Official packages
+
+#=======> Official packages <=======#
 sudo pacman -S \
 	android-tools\
 	ncurses\
@@ -9,4 +10,11 @@ sudo pacman -S \
 	zsh
 
 
-# Aur packages
+
+#=======>   Aur packages    <=======#
+# --empty
+
+
+
+#=======> Git dependencies  <=======#
+# --empty
