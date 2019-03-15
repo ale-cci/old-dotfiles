@@ -90,5 +90,6 @@ alias xconfig="$EDITOR ~/.Xresources"
 alias cbeifi="cd ~/Desktop/membership"
 alias capex="cd ~/Desktop/al_stats"
 alias cscripts="cd ~/Desktop/py_scripts"
+alias cpy="rsync -rh --info=progress2"
 
 alias starwars="telnet towel.blinkenlights.nl"
