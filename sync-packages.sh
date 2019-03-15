@@ -7,7 +7,8 @@ sudo pacman -S \
 	ncurses\
 	neovim\
 	rsync\
-	zsh
+	zsh\
+	xorg-xsetroot
 
 
 
