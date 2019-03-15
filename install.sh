@@ -1,3 +1,9 @@
+# Download Dependencies
+./_sync-packages.sh
+./_sync-directories.sh
+
+
+# Creating Symlinks
 ln -sn $PWD/.Xresources ~/.Xresources
 ln -sn $PWD/.Xresources ~/.zshrc
 
