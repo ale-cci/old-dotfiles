@@ -8,7 +8,13 @@ sudo pacman -S \
 	neovim\
 	rsync\
 	zsh\
-	xorg-xsetroot
+	xorg-xbacklight\
+	xorg-xsetroot\
+	python\
+	xclip\
+	i3-wm\
+	i3-blocks\
+	i3-status
 
 
 
