@@ -13,3 +13,4 @@ ln -sfn $PWD/init.vim  ~/.config/nvim/init.vim
 ln -sfn $PWD/fontconfig ~/.config
 
 ln -sfn $PWD/vifm ~/.config
+ln -sfn $PWD/dunst ~/.config

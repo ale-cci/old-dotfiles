@@ -1,5 +1,6 @@
 # Download Dependencies
 ./sync-dirs.sh
+./sync-symlinks.sh
 ./sync-packages.sh
 
 # Sets zsh as the default shell
@@ -18,10 +19,6 @@ curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
 
 # Installing vim plugins
 vim +PlugInstall +qall
-
-
-# Creating Symlinks
-./sync-symlinks.sh
 
 
 # Setting Wallpaper
