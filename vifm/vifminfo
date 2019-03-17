@@ -1,0 +1,128 @@
+# You can edit this file by hand, but it's recommended not to do that.
+
+# Marks:
+'H
+	/home/alec/
+	..
+1552834650
+'b
+	/home/alec/bin/
+	..
+1552834650
+'h
+	/home/alec/
+	..
+1552834650
+'z
+	/home/alec/.config/vifm
+	..
+1552834650
+
+# Bookmarks:
+
+# TUI:
+al
+q1
+v2
+ov
+m-1
+l2
+r2
+
+# Left window history (oldest to newest):
+d/home/alec
+	ttf-emojione-color
+3
+d/home/alec/ttf-emojione-color
+	..
+0
+d/home/alec
+	..
+0
+d/home
+	alec
+1
+d/home/alec
+	desk
+1
+d/home/alec/desk
+	..
+0
+d/home/alec
+	dl
+2
+d/home/alec/dl
+	..
+0
+d/home/alec
+	ttf-emojione-color
+3
+d/home/alec/ttf-emojione-color
+	..
+0
+d/home/alec
+	dl
+2
+d/home/alec/dl
+	dotfiles
+4
+d/home/alec/dl/dotfiles
+	..
+0
+d/home/alec/dl
+	..
+0
+d/home/alec
+	desk
+1
+d/home/alec/desk
+	..
+0
+d/home/alec
+	dl
+2
+d/home/alec/dl
+	dotfiles
+4
+d/home/alec/dl/dotfiles
+	i3blocks-config
+4
+d
+
+# Right window history (oldest to newest):
+D/home/alec
+	..
+0
+D
+
+# Command line history (oldest to newest):
+:!echo $EDITOR
+:! scmp_sys_resolver
+:set filetype=png
+::q
+:!sxiv %f
+:q
+
+# Search history (oldest to newest):
+/ali
+
+# Prompt history (oldest to newest):
+
+# Local filter history (oldest to newest):
+
+# Registers:
+
+# Directory stack (oldest to newest):
+
+# Trash content:
+
+# State:
+f
+i1
+[.1
+[F
+F
+I1
+].1
+]F
+s0
