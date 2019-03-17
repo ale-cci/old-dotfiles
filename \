@@ -41,14 +41,12 @@ yes | sudo pacman -S \
 #=======> Git dependencies  <=======#
 # Installing Suckless terminal and dmenu
 function suckless_git_install {
-	git clone $1 $2 > /dev/null
+	git clone $1 $2
 
 	# Tweaks
 	case $1 in
-		*st.git)
-			sed  -i -E 's/pixelsize=[0-9]+/pixelsize=13/g' $HOME/dl/st-source/config.h ;;
+		*st.git) sed  -i -E 's/pixelsize=[0-9]+/pixelsize=13/g' $HOME/dl/st-source/config.h ;;
 	esac
-
 	(cd $2 && sudo make clean install)
 }
 
