@@ -1,0 +1,33 @@
+#!/bin/sh
+for x in "$(xrdb -query | grep color | sed "s/\*color\([0-9]*\):\s*#\([0-9a-fA-F]*\)/color\1=\"#\2\"/g")" ; do eval "$x"; done
+
+case $BLOCK_BUTTON in
+	1) setsid "$TERMINAL" -e pulsemixer & ;;
+	2) pulsemixer --toggle-mute ;;
+	4) pulsemixer --change-volume +5 ;;
+	5) pulsemixer --change-volume -5 ;;
+	3) pgrep -x dunst >/dev/null && notify-send "<b>📢 Volume module:</b>
+- Shows volume 🔊, 🔇 if muted.
+- Middle click to mute.
+- Scroll to change."
+esac
+
+
+[ "$(pulsemixer --get-mute)" = "1" ] && printf "<span color='$color9'></span>" && exit
+
+vol=$(pulsemixer --get-volume | awk '{print int($1/1.5)}')
+
+ic_vol_low=""
+ic_vol_norm=""
+ic_vol_high=""
+
+if [ "$vol" -gt "70" ]; then
+	icon="$ic_vol_high"
+elif [ "$vol" -lt "30" ]; then
+	icon="$ic_vol_low"
+else
+	icon="$ic_vol_norm"
+fi
+
+printf "%s %s%%\\n" "$icon" "$vol"
+pkill -RTMIN+10 i3blocks

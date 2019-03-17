@@ -1,0 +1,51 @@
+#!/bin/sh
+# Give a battery name (e.g. BAT0) as an argument.
+
+# get xresources color
+# # "s/*(.*)\./export /g;s/:\s*/=\"/g;s/$/\"/g")"
+for x in "$(xrdb -query | grep color | sed "s/\*color\([0-9]*\):\s*#\([0-9a-fA-F]*\)/color\1=\"#\2\"/g")" ; do eval "$x"; done
+
+case $BLOCK_BUTTON in
+    3) pgrep -x dunst >/dev/null && notify-send "<b>🔋 Battery module:</b>
+: not charging
+: stagnant charge
+: charging
+
+: battery very low!
+- Text color reflects charge left" ;;
+esac
+
+capacity=$(cat /sys/class/power_supply/"$1"/capacity) || exit
+status=$(cat /sys/class/power_supply/"$1"/status)
+
+if [ "$capacity" -ge 75 ]; then
+	color="$color10"
+elif [ "$capacity" -ge 50 ]; then
+	color="$color15"
+elif [ "$capacity" -ge 25 ]; then
+	color="$color11"
+else
+	color="$color9"
+fi
+
+[ "$status" = "Charging" ] && color="$color15"
+
+# Battery Levels
+# ""
+# ""
+# ""
+# ""
+# ""
+
+ic_capacity=("" "" "" "" "")
+icn_index=$(( $capacity * 5/ 100))
+icn_index=$(($icn_index==5?4:$icn_index))
+
+icn_discharging="${ic_capacity[$icn_index]}"
+
+
+
+printf "<span color='%s'>%s %s</span>" \
+		"$color" \
+		"$(echo "$status" | sed -e "s/,//;s/Discharging/$icn_discharging/;s/Not Charging//;s/Charging//;s/Unknown//;s/Full//;s/ 0*/ /g;s/ :/ /g")" \
+		"$(echo "$capacity" | sed -e 's/$/%/')"

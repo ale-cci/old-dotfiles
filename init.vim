@@ -16,6 +16,8 @@ Plug 'vim-syntastic/syntastic'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'tpope/vim-commentary'
+Plug 'ctrlpvim/ctrlp.vim'
+" Plug 'mattn/emmet-vim'
 
 " Colorscheme
 Plug 'morhetz/gruvbox'
@@ -28,10 +30,22 @@ Plug 'mxw/vim-jsx'
 Plug 'PotatoesMaster/i3-vim-syntax'
 call plug#end()
 
+set wildignore+=*.pdf,*.psd
+set wildignore+=*.bmp,*.gif,*.ico,*.jpg,*.png,*.ico
+set wildignore+=node_modules/*,bower_components/*
+
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enables = 1
 let g:airline_theme='gruvbox'
 let g:Powerline_symbols='unicode'
+
+let g:ctrlp_map='<c-g>'
+let g:ctrlp_cmd='CtrlP'
+let g:ctrlp_prompt_mappings = {
+			\'AcceptSelection("e")': ['<2-LeftMouse>'],
+			\'AcceptSelection("t")': ['<cr>']}
+
+
 filetype plugin indent on
 
 set mouse=a
@@ -96,10 +110,6 @@ nnoremap <c-b> <nop>
 
 set clipboard=unnamed
 
-set wildignore+=*.pdf,*.psd
-set wildignore+=*.bmp,*.gif,*.ico,*.jpg,*.png,*.ico
-set wildignore+=node_modules/*,bower_components/*
-nnoremap <c-g> :tabe **/*
 
 " File Compiler
 nmap <C-X> :w<cr>:!compiler %<cr>

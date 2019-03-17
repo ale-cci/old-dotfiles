@@ -23,16 +23,15 @@ vim +PlugInstall +qall
 ln -sfn $PWD/.Xresources ~/.Xresources
 ln -sfn $PWD/.zshrc ~/.zshrc
 ln -sfn $PWD/.zshenv ~/.zshenv
+ln -sfn $PWD/.zprofile ~/.zprofile
+ln -sf $PWD/.scripts ~/.scripts
+ln -snf $PWD/.xinitrc ~/.xinitrc
+ln -snf $PWD/i3-config ~/.config/i3/config
+ln -snf $PWD/i3blocks-config ~/.config/i3blocks/config
 
 mkdir -p ~/.config/nvim
 ln -sfn $PWD/init.vim  ~/.config/nvim/init.vim
 
-# Installing Suckless terminal and dmenu
-function suckless_git_install {
-	git clone $1 $2
-	(cd $2 && sudo make clean install)
-}
 
-suckless_git_install "https://github.com/LukeSmithxyz/st.git" "$HOME/dl/st-source"
-suckless_git_install "https://github.com/LukeSmithxyz/dmenu.git" "$HOME/dl/dmenu-source"
-
+# Setting Wallpaper
+cp wall.png ~/.config

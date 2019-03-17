@@ -1,0 +1,30 @@
+#!/bin/sh
+msgId="991050"
+
+function prog {
+	data=$1
+	max_ticks=10
+	ticks=$(($data / $max_ticks ))
+	echo "$(printf "%*s" $ticks "" | sed "s/ /■/g")$(printf "%*s" $(($max_ticks-$ticks)) "" | sed "s/ /□/g")"
+}
+
+case "$1" in
+	u*)  xbacklight -inc 5;;
+	d*)  xbacklight -dec 5;;
+	*) cat << EOF
+EOF
+esac
+
+brightness="$(xbacklight -get)"
+brightness="${brightness%.*}"
+
+if [[ "$brightness" -gt "50" ]]; then
+	icon=""
+else
+	icon=""
+fi
+
+dunstify -r "$msgId" -u low -a "changeBrightness" "$icon $(prog $brightness)"
+
+# Update i3blocks brightness block
+# pkill -RTMIN+12 i3blocks

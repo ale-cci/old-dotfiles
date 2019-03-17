@@ -1,0 +1,65 @@
+#!/bin/bash
+# Arbitrary but unique message id
+
+function prog {
+	data=$1
+	max_ticks=10
+	ticks=$(($data / $max_ticks ))
+	echo "$(printf "%*s" $ticks "" | sed "s/ /■/g")$(printf "%*s" $(($max_ticks-$ticks)) "" | sed "s/ /□/g")"
+}
+
+msgId="991049"
+
+[ -z "$2" ] && num="2" || num="$2"
+
+
+case "$1" in
+	u*) pulsemixer --change-volume +"$num" && do_notify=1;;
+	d*) pulsemixer --change-volume -"$num" && do_notify=1 ;;
+	m*) pulsemixer --toggle-mute && do_notify=1 ;;
+	truemute) pulsemixer --mute && do_notify=1 ;;
+	play) mpc play ;;
+	n*) mpc next ;;
+	prev) mpc prev ;;
+	t*) mpc toggle ;;
+	p*) mpc pause ; pauseallmpv ;;
+	f*) mpc seek +"$num" ;;
+	b*) mpc seek -"$num" ;;
+	r*) mpc seek 0% ;;
+esac
+
+
+# Change the volume using alsa(might differ if you use pulseaudio)
+if [[ $do_notify == 1 ]]; then
+	# Play the volume changed sound
+	canberra-gtk-play -i audio-volume-change -d "changeVolume"
+
+	# Query amixer for the current volume and whether or not the speaker is muted
+
+	volume=$(pulsemixer --get-volume | awk '{print int($1/1.5)}')
+
+	# if [ "$volume" -gt "70" ]; then
+	# 	icon="🔊"
+	# elif [ "$volume" -lt "30" ]; then
+	# 	icon="🔈"
+	# else
+	# 	icon="🔉"
+	# fi
+
+	# volume="$(amixer -c 0 get Master | tail -1 | awk '{print $4}' | sed 's/[^0-9]*//g')"
+	mute="$(amixer -c 0 get Master | tail -1 | awk '{print $6}' | sed 's/[^a-z]*//g')"
+
+	if [[ "$mute" == "off" ]]; then
+	 # Show the sound muted notification
+	 for x in "$(xrdb -query | grep color | sed "s/\*color\([0-9]*\):\s*#\([0-9a-fA-F]*\)/color\1=\"#\2\"/g")" ; do eval "$x"; done
+	 dunstify -a "changeVolume" -u low -i audio-volume-muted -r "$msgId" "<span color='$color9'>  Volume muted</span>"
+	else
+	 # Show the volume notification
+	 dunstify -a "changeVolume" -u low -i audio-volume-high -r "$msgId" \
+		  " $(prog $volume)"
+	fi
+	#
+
+fi
+
+pkill -RTMIN+10 i3blocks
