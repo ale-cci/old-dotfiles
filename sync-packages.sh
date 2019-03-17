@@ -2,7 +2,7 @@
 
 
 #=======> Official packages <=======#
-yes | sudo pacman -S \
+sudo pacman -S \
 	android-tools\
 	chromium\
 	unzip\
@@ -28,7 +28,8 @@ yes | sudo pacman -S \
 	xf86-video-intel\
 	xorg-xinit\
 	xorg-xbacklight\
-	xorg-xsetxkbmap\
+	xorg-setxkbmap\
+	zathura\:W
 	xwallpaper\
 	zsh
 
