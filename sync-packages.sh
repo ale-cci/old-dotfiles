@@ -68,7 +68,9 @@ function suckless_git_install {
 	# Tweaks
 	case $1 in
 		*st.git)
-			sed  -i -E 's/pixelsize=[0-9]+/pixelsize=13/g' $HOME/dl/st-source/config.h ;;
+			sed  -i -E 's/pixelsize=[0-9]+/pixelsize=13/g' $2/config.h ;;
+		*dmenu.git)
+			sed -i -E 's/:size=[0-9]+/:pixelsize=14/g' $2/config.h ;;
 	esac
 
 	(cd $2 && sudo make clean install > /dev/null)
