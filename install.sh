@@ -15,6 +15,7 @@ ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/the
 # Installing Vundle
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
 # Installing vim plugins
 vim +PlugInstall +qall
 
@@ -24,12 +25,11 @@ ln -sfn $PWD/.Xresources ~/.Xresources
 ln -sfn $PWD/.zshrc ~/.zshrc
 ln -sfn $PWD/.zshenv ~/.zshenv
 ln -sfn $PWD/.zprofile ~/.zprofile
-ln -sf $PWD/.scripts ~/.scripts
+ln -snf $PWD/.scripts ~
 ln -snf $PWD/.xinitrc ~/.xinitrc
 ln -snf $PWD/i3-config ~/.config/i3/config
 ln -snf $PWD/i3blocks-config ~/.config/i3blocks/config
 
-mkdir -p ~/.config/nvim
 ln -sfn $PWD/init.vim  ~/.config/nvim/init.vim
 
 
