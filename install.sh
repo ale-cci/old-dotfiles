@@ -1,6 +1,6 @@
 # Download Dependencies
-./sync-packages.sh
 ./sync-dirs.sh
+./sync-packages.sh
 
 # Sets zsh as the default shell
 [[ $SHELL != "$(which zsh)" ]] && chsh -s $(which zsh)

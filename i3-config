@@ -251,7 +251,7 @@ set $ws10 "10:"
 
 # Autostart program list
 # exec --no-startup-id i3-msg 'Slack; exec ~/.local/bin/slack-term'
-exec --no-startup-id i3-msg 'workspace $ws1; exec st'
+exec --no-startup-id i3-msg 'workspace $ws1; exec st -e "neofetch"'
 
 
 # switch to workspace
