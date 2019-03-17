@@ -1,0 +1,2 @@
+#!/usr/bin/env sh
+st -e sh -c "neofetch; $SHELL"

@@ -22,6 +22,7 @@ sudo pacman -S \
 	pulseaudio\
 	pulseaudio-alsa\
 	pulsemixer\
+	subversion\
 	rsync\
 	tmux\
 	xclip\
@@ -34,6 +35,7 @@ sudo pacman -S \
 	xcompmgr\
 	xorg-setxkbmap\
 	zathura\
+	vifm\
 	xwallpaper\
 	zsh
 
@@ -48,6 +50,13 @@ function aur_install {
 
 aur_install "sc-im"
 aur_install "unclutter-xfixes-git"
+
+# Image Viewer
+aur_install "sxiv-git"
+
+# for Vifm Image Preview
+aur_install "python-pillow-simd"
+aur_install "python-ueberzug"
 
 
 #=======> Git dependencies  <=======#
@@ -68,6 +77,7 @@ function suckless_git_install {
 suckless_git_install "https://github.com/LukeSmithxyz/st.git" "$HOME/dl/st-source"
 suckless_git_install "https://github.com/LukeSmithxyz/dmenu.git" "$HOME/dl/dmenu-source"
 https://github.com/dylanaraps/neofetch
+
 # Powerline fonts instsllation
 git clone https://github.com/powerline/fonts.git --depth=1
 cd fonts
@@ -75,4 +85,10 @@ mv fontconfig/50-enable-terminess-powerline.conf ~/.config/fontconfig/conf.d/
 ./install.sh
 cd ..
 rm -rf fonts
+
+# Nerd Font installation
+snv export https://github.com/ryanoasis/nerd-fonts/trunk/patched-fonts/FiraCode FiraCode
+mkdir -p ~/.local/share/fonts
+
+mv FiraCode  ~/.local/share/fonts
 

@@ -65,14 +65,20 @@ plugins=(
 	git,
 	zsh-syntax-highlighting
 )
-
 source $ZSH/oh-my-zsh.sh
 
+export FILE="vu"
 # User configuration
 
 # ssh
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
 
+function aur_install {
+	curl -L -O "https://aur.archlinux.org/cgit/aur.git/snapshot/$1.tar.gz"
+	mv "$1.tar.gz" /tmp
+	tar -xvzf "/tmp/$1.tar.gz" -C /tmp
+	(cd /tmp/$1 && yes | makepkg -si > /dev/null)
+}
 
 # Personal Aliases
 alias zshrc="$EDITOR ~/.zshrc"

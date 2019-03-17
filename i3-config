@@ -18,7 +18,7 @@
 font pango:mono 10
 
 for_window [class="^.*"] border pixel 2
-gaps inner 0
+gaps inner 5
 gaps outer 0
 set $term --no-startup-id $TERMINAL
 set $mod Mod4
@@ -251,7 +251,7 @@ set $ws10 "10:"
 
 # Autostart program list
 # exec --no-startup-id i3-msg 'Slack; exec ~/.local/bin/slack-term'
-exec --no-startup-id i3-msg 'workspace $ws1; exec st -e "neofetch"'
+exec --no-startup-id i3-msg 'workspace $ws1; exec niceterm'
 
 
 # switch to workspace
