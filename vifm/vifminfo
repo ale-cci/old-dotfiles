@@ -124,8 +124,32 @@ d/home/alec/dl/dotfiles
 	i3blocks-config
 4
 d/home/alec/dl
-	apex-background-red.jpg
-23
+	..
+0
+d/home/alec
+	dotfiles
+10
+d/home/alec/dotfiles
+	sync-symlinks.sh
+11
+d/home/alec
+	desk
+8
+d/home
+	alec
+1
+d/
+	home
+4
+d/home
+	alec
+1
+d/home/alec
+	pdf
+13
+d/home/alec/pdf
+	Elettronica A - Parte 1.pdf
+2
 d
 
 # Right window history (oldest to newest):
@@ -158,6 +182,10 @@ D
 :set fillchars=vborder:|
 :set fillchars=vborder:\|
 :set fillchars=vborder:\|:q
+:!..
+:st
+:!st
+:wq
 :q
 
 # Search history (oldest to newest):
