@@ -5,6 +5,7 @@
 
 #=======> Official packages <=======#
 sudo pacman -S \
+	atool\
 	android-tools\
 	chromium\
 	calcurse\
