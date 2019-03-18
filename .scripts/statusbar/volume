@@ -2,7 +2,7 @@
 for x in "$(xrdb -query | grep color | sed "s/\*color\([0-9]*\):\s*#\([0-9a-fA-F]*\)/color\1=\"#\2\"/g")" ; do eval "$x"; done
 
 case $BLOCK_BUTTON in
-	1) setsid "$TERMINAL" -e pulsemixer & ;;
+	1) pulsemixer --toggle-mute ;;
 	2) pulsemixer --toggle-mute ;;
 	4) pulsemixer --change-volume +5 ;;
 	5) pulsemixer --change-volume -5 ;;

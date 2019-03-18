@@ -7,6 +7,7 @@
 sudo pacman -S \
 	android-tools\
 	chromium\
+	calcurse\
 	unzip\
 	unrar\
 	networkmanager\
@@ -27,8 +28,13 @@ sudo pacman -S \
 	tmux\
 	xclip\
 	xf86-input-libinput\
+	xorg-xwininfo\
 	xorg-server\
 	xf86-video-intel\
+	mpv\
+	mpd\
+	mpc\
+	ncmpcpp\
 	xorg-xinit\
 	xorg-xbacklight\
 	neofetch\
@@ -58,6 +64,14 @@ aur_install "sxiv-git"
 aur_install "python-pillow-simd"
 aur_install "python-ueberzug"
 
+# Font fallback
+aur_install "ttf-symbola"
+
+# Redshift
+aur_install "redshift-minimal"
+aur_install "urlscan"
+aur_install "xurls"
+
 
 #=======> Git dependencies  <=======#
 # Installing Suckless terminal and dmenu
@@ -80,16 +94,16 @@ suckless_git_install "https://github.com/LukeSmithxyz/st.git" "$HOME/dl/st-sourc
 suckless_git_install "https://github.com/LukeSmithxyz/dmenu.git" "$HOME/dl/dmenu-source"
 https://github.com/dylanaraps/neofetch
 
-# Powerline fonts instsllation
-git clone https://github.com/powerline/fonts.git --depth=1
-cd fonts
-mv fontconfig/50-enable-terminess-powerline.conf ~/.config/fontconfig/conf.d/
-./install.sh
-cd ..
-rm -rf fonts
+# # Powerline fonts instsllation
+# git clone https://github.com/powerline/fonts.git --depth=1
+# cd fonts
+# mv fontconfig/50-enable-terminess-powerline.conf ~/.config/fontconfig/conf.d/
+# ./install.sh
+# cd ..
+# rm -rf fonts
 
 # Nerd Font installation
-snv export https://github.com/ryanoasis/nerd-fonts/trunk/patched-fonts/FiraCode FiraCode
+svn export https://github.com/ryanoasis/nerd-fonts/trunk/patched-fonts/FiraMono FiraMono
 mkdir -p ~/.local/share/fonts
 
 mv FiraCode  ~/.local/share/fonts

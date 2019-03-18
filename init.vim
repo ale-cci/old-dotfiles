@@ -35,9 +35,22 @@ set wildignore+=*.bmp,*.gif,*.ico,*.jpg,*.png,*.ico
 set wildignore+=node_modules/*,bower_components/*
 
 let g:airline_powerline_fonts = 1
-let g:airline#extensions#tabline#enables = 1
 let g:airline_theme='gruvbox'
-let g:Powerline_symbols='unicode'
+
+if !exists('g:airline_symbols')
+    let g:airline_symbols = {}
+endif
+
+" airline symbols
+let g:airline_left_sep = ''
+let g:airline_left_alt_sep = ''
+let g:airline_right_sep = ''
+let g:airline_right_alt_sep = ''
+let g:airline_symbols.branch = ''
+let g:airline_symbols.readonly = ''
+let g:airline_symbols.linenr = ''
+
+
 
 let g:ctrlp_map='<c-g>'
 let g:ctrlp_cmd='CtrlP'

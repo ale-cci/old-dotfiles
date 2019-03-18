@@ -20,6 +20,8 @@ curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
 # Installing vim plugins
 vim +PlugInstall +qall
 
+systemctl --user enable redshift
+sudo systemctl enable mpd
 
 # Setting Wallpaper
 cp wall.png ~/.config

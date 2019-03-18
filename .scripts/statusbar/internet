@@ -15,16 +15,12 @@ esac
 
 
 
-icons=( '' '' '' )
 strength="$(grep "^\s*w" /proc/net/wireless | awk '{print int($3*100/70)}')"
 
 [ ! $strength ] && strength=0
 
-icon_id=$(($strength*3/ 100 ))
-icon_id=$(($icon_id>2? 2 : $icon_id))
 
 
-
-[ ! -n "${wifiicon+var}" ] && wifiicon="${icons[$icon_id]} $strength%"
+[ ! -n "${wifiicon+var}" ] && wifiicon=" $strength%"
 
 printf "%s %s" "$wifiicon" "$(cat /sys/class/net/e*/operstate | sed "s/down//;s/up//")"
