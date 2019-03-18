@@ -5,45 +5,46 @@
 
 #=======> Official packages <=======#
 sudo pacman -S \
-	atool\
 	android-tools\
-	chromium\
+	atool\
 	calcurse\
-	unzip\
-	unrar\
-	networkmanager\
-	libnotify\
+	chromium\
 	dunst\
-	i3blocks\
-	i3-gaps\
-	i3status\
+	git\
 	htop\
-	ncurses\
-	neovim\
-	python\
-	pulseaudio\
-	pulseaudio-alsa\
-	pulsemixer\
-	subversion\
-	rsync\
-	tmux\
-	xclip\
-	xf86-input-libinput\
-	xorg-xwininfo\
-	xorg-server\
-	xf86-video-intel\
-	mpv\
-	mpd\
+	i3-gaps\
+	i3blocks\
+	i3status\
+	libnotify\
 	mpc\
+	mpd\
+	mpv\
 	ncmpcpp\
-	xorg-xinit\
-	xorg-xbacklight\
+	ncurses\
 	neofetch\
-	xcompmgr\
-	xorg-setxkbmap\
-	zathura\
+	neovim\
+	networkmanager\
+	pulseaudio-alsa\
+	pulseaudio\
+	pulsemixer\
+	python\
+	rsync\
+	subversion\
+	tmux\
+	unrar\
+	unzip\
 	vifm\
+	xclip\
+	xcompmgr\
+	xf86-input-libinput\
+	xf86-video-intel\
+	xorg-server\
+	xorg-setxkbmap\
+	xorg-xbacklight\
+	xorg-xinit\
+	xorg-xwininfo\
 	xwallpaper\
+	zathura\
 	zsh
 
 

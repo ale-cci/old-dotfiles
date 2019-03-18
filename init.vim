@@ -18,6 +18,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'tpope/vim-commentary'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'vifm/vifm.vim'
+Plug 'jreybert/vimagit'
 " Plug 'mattn/emmet-vim'
 
 " Colorscheme

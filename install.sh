@@ -25,3 +25,4 @@ sudo systemctl enable mpd
 
 # Setting Wallpaper
 cp wall.png ~/.config
+git config --global merge.tool vimdiff

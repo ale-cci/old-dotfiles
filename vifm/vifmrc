@@ -31,6 +31,7 @@ map E :!$EDITOR %f<CR>
 map mkd :mkdir<space>
 map bg :!setbg %f &<CR>
 
+
 nmap <space> tj
 nmap q ZQ
 fileviewer *.html,*.css,*.py,*.c,*.h,*.sh,*.diff,*.tex,*.md highlight -O ansi %c
@@ -166,3 +167,6 @@ nnoremap ,c :write | edit $MYVIFMRC | restart<cr>
 " Toggle wrap setting on ,w key
 nnoremap ,w :set wrap!<cr>
 set fillchars:vborder:'|'
+
+" Git
+map ,gl :!git log --color --graph --oneline --abbrev-commit -- %c %q<cr>
