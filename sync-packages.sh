@@ -94,7 +94,6 @@ function suckless_git_install {
 
 suckless_git_install "https://github.com/LukeSmithxyz/st.git" "$HOME/dl/st-source"
 suckless_git_install "https://github.com/LukeSmithxyz/dmenu.git" "$HOME/dl/dmenu-source"
-https://github.com/dylanaraps/neofetch
 
 # # Powerline fonts instsllation
 # git clone https://github.com/powerline/fonts.git --depth=1
