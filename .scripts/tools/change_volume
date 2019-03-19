@@ -52,7 +52,7 @@ if [[ $do_notify == 1 ]]; then
 	if [[ "$mute" == "off" ]]; then
 	 # Show the sound muted notification
 	 for x in "$(xrdb -query | grep color | sed "s/\*color\([0-9]*\):\s*#\([0-9a-fA-F]*\)/color\1=\"#\2\"/g")" ; do eval "$x"; done
-	 dunstify -a "changeVolume" -u low -i audio-volume-muted -r "$msgId" "<span color='$color9'>  Volume muted</span>"
+	 dunstify -a "changeVolume" -u low -i audio-volume-muted -r "$msgId" "<span color='$color9'> Volume muted</span>"
 	else
 	 # Show the volume notification
 	 dunstify -a "changeVolume" -u low -i audio-volume-high -r "$msgId" \
