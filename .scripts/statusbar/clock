@@ -4,7 +4,7 @@ date '+%a %d %b %H:%M'
 
 case $BLOCK_BUTTON in
 	1) "$TERMINAL" -e calcurse ;;
-	3) pgrep -x dunst >/dev/null && notify-send "<b>📅 Time/date module:</b>
+	3) pgrep -x dunst >/dev/null && notify-send "<b> Time/date module:</b>
 - Left click to show upcoming appointments for the next three days via \`calcurse -d3\` and show the month via \`cal\`
 - Middle click opens calcurse if installed" ;;
 esac

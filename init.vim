@@ -148,3 +148,11 @@ map q: <Nop>
 
 set exrc
 set secure
+
+
+function! Gliph()
+	let gli = input('Gliph Id: ')
+	let @g = system('echo -n "\u'.gli.'"')
+	normal! "gP
+endfunction
+nnoremap gi :call Gliph()<cr>
