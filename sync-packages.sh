@@ -95,6 +95,7 @@ function suckless_git_install {
 suckless_git_install "https://github.com/LukeSmithxyz/st.git" "$HOME/dl/st-source"
 suckless_git_install "https://github.com/LukeSmithxyz/dmenu.git" "$HOME/dl/dmenu-source"
 
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 # # Powerline fonts instsllation
 # git clone https://github.com/powerline/fonts.git --depth=1
 # cd fonts
