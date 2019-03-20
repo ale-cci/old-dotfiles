@@ -3,7 +3,6 @@
 # Todo set ubuntu font family
 # sudo pacman -Syu
 
-set -e
 
 #=======> Official packages <=======#
 sudo pacman -S \
@@ -50,13 +49,16 @@ sudo pacman -S \
 	zathura\
 	zsh
 
+export ZSH_CUSTOM="$HOME/.oh-my-zsh/custom"
+./oh-my-zsh_install.sh
 
 #=======>   Aur packages    <=======#
 function aur_install {
 	curl -L -O "https://aur.archlinux.org/cgit/aur.git/snapshot/$1.tar.gz"
 	mv "$1.tar.gz" /tmp
 	tar -xvzf "/tmp/$1.tar.gz" -C /tmp
-	(cd /tmp/$1 && yes | makepkg -si > /dev/null)
+	(cd /tmp/$1 && yes | makepkg -si > /dev/null 2>&1)
+	echo "Installed $1"
 }
 
 aur_install "sc-im"
@@ -98,8 +100,6 @@ function suckless_git_install {
 suckless_git_install "https://github.com/LukeSmithxyz/st.git" "$HOME/dl/st-source"
 suckless_git_install "https://github.com/LukeSmithxyz/dmenu.git" "$HOME/dl/dmenu-source"
 
-export ZSH_CUSTOM="$HOME/.oh-my-zsh/custom"
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
