@@ -1,4 +1,5 @@
 # Download Dependencies
+set -e
 ./sync-dirs.sh
 ./sync-packages.sh
 ./sync-symlinks.sh
