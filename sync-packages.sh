@@ -67,7 +67,7 @@ aur_install "python-pillow-simd"
 aur_install "python-ueberzug"
 
 # Font fallback
-aur_install "ttf-symbola"
+# aur_install "ttf-symbola"
 
 # Redshift
 aur_install "redshift-minimal"
@@ -95,6 +95,7 @@ function suckless_git_install {
 suckless_git_install "https://github.com/LukeSmithxyz/st.git" "$HOME/dl/st-source"
 suckless_git_install "https://github.com/LukeSmithxyz/dmenu.git" "$HOME/dl/dmenu-source"
 
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 # # Powerline fonts instsllation
 # git clone https://github.com/powerline/fonts.git --depth=1
@@ -105,7 +106,7 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 # rm -rf fonts
 
 # Nerd Font installation
-svn export https://github.com/ryanoasis/nerd-fonts/trunk/patched-fonts/FiraMono FiraMono
+svn export https://github.com/ryanoasis/nerd-fonts/trunk/patched-fonts/FiraCode FiraCode
 mkdir -p ~/.local/share/fonts
 
 mv FiraCode  ~/.local/share/fonts

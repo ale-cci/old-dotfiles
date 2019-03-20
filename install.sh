@@ -1,7 +1,7 @@
 # Download Dependencies
 ./sync-dirs.sh
-./sync-symlinks.sh
 ./sync-packages.sh
+./sync-symlinks.sh
 
 # Sets zsh as the default shell
 [[ $SHELL != "$(which zsh)" ]] && chsh -s $(which zsh)
@@ -18,7 +18,7 @@ curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 # Installing vim plugins
-vim +PlugInstall +qall
+nvim +PlugInstall +qall
 
 systemctl --user enable redshift
 sudo systemctl enable mpd
