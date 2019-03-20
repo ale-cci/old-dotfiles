@@ -30,4 +30,5 @@ sudo systemctl enable mpd
 cp wall.png ~/.config
 git config --global merge.tool vimdiff
 
-
+echo "Installation Completed!"
+shutdown -r
