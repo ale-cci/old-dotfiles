@@ -10,4 +10,5 @@ mkdir -p ~/dl
 # Config Directories
 mkdir -p ~/.config/nvim
 mkdir -p ~/.config/i3blocks
+mkdir -p ~/.config/i3
 mkdir -p ~/.config/fontconfig/conf.d

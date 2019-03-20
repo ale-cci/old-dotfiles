@@ -3,6 +3,8 @@
 # Todo set ubuntu font family
 # sudo pacman -Syu
 
+set -e
+
 #=======> Official packages <=======#
 sudo pacman -S \
 	android-tools\
