@@ -54,11 +54,13 @@ export ZSH_CUSTOM="$HOME/.oh-my-zsh/custom"
 
 #=======>   Aur packages    <=======#
 function aur_install {
-	curl -L -O "https://aur.archlinux.org/cgit/aur.git/snapshot/$1.tar.gz"
+	echo "Installing  $1"
+	curl -L -O "https://aur.archlinux.org/cgit/aur.git/snapshot/$1.tar.gz" > /dev/null
 	mv "$1.tar.gz" /tmp
-	tar -xvzf "/tmp/$1.tar.gz" -C /tmp
+	tar -xzf "/tmp/$1.tar.gz" -C /tmp
 	(cd /tmp/$1 && yes | makepkg -si > /dev/null 2>&1)
-	echo "Installed $1"
+	echo "Done"
+	echo ""
 }
 
 aur_install "sc-im"
@@ -94,7 +96,7 @@ function suckless_git_install {
 			sed -i -E 's/:size=[0-9]+/:pixelsize=14/g' $2/config.h ;;
 	esac
 
-	(cd $2 && sudo make clean install > /dev/null)
+	(cd $2 && sudo make clean install > /dev/null 2>&1)
 }
 
 suckless_git_install "https://github.com/LukeSmithxyz/st.git" "$HOME/dl/st-source"
