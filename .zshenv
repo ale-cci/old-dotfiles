@@ -17,3 +17,5 @@ export BEIFI_MOBILE_DIR="$HOME/Desktop/beifi_mobile"
 export ANDROID_HOME="$HOME/Android/Sdk"
 export JAVA_HOME="/usr/lib/jvm/default"
 
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
