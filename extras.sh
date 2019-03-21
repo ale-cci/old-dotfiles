@@ -11,7 +11,8 @@ rm get-pip.py
 pip install --user requests
 pip install --user bs4
 
-sudo pacman -S\
+sudo pacman -S \
+	chrmoium\
 	pandoc\
 	texlive-core
 

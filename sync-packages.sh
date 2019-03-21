@@ -9,7 +9,6 @@ sudo pacman -S \
 	android-tools\
 	atool\
 	calcurse\
-	chromium\
 	dunst\
 	git\
 	htop\
@@ -34,6 +33,7 @@ sudo pacman -S \
 	subversion\
 	tmux\
 	unrar\
+	qutebrowser\
 	unzip\
 	vifm\
 	xclip\
