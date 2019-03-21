@@ -7,6 +7,14 @@ markup=pango
 interval=once
 signal=11
 
+[disk]
+command=disk /dev/nvme0n1p2 SSD
+interval=60
+label=
+
+[memory]
+interval=10
+label=
 
 [weather]
 interval=3600
