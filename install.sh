@@ -40,7 +40,7 @@ curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 # Installing vim plugins
-nvim +PlugInstall +qall
+nvim -E -c "PlugUpdate|visual|q|q"
 
 systemctl --user enable redshift
 sudo systemctl enable mpd
