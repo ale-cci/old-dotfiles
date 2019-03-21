@@ -37,7 +37,7 @@ grep "ILoveCandy" /etc/pacman.conf >/dev/null || sudo sed -i "/#VerbosePkgLists/
 # Vim Configuration
 # Installing Vundle
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+	https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 # Installing vim plugins
 nvim -E -c "PlugUpdate|visual|q|q"

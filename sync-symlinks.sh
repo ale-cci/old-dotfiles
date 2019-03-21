@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 ln -sfn $PWD/.Xresources ~/.Xresources
 ln -sfn $PWD/.zshrc ~/.zshrc
 ln -sfn $PWD/.zshenv ~/.zshenv
@@ -18,3 +20,7 @@ rm -rf ~/.config/vifm
 ln -sfn $PWD/vifm ~/.config
 ln -sfn $PWD/dunst ~/.config
 ln -sfn $PWD/.tmux.conf ~
+
+ln -snf $PWD/.emoji ~/.config/.emoji
+
+echo "Config files linked successfully"
