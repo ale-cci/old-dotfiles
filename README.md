@@ -22,5 +22,6 @@ cd dotfiles
 * Dropdown list of keybindings
 * Install programs from csv
 * Backup script
+* neomutt
 * Markdown preview
 * Screenshots in README.md

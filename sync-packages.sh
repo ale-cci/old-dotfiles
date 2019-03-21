@@ -74,6 +74,9 @@ aur_install "sxiv-git"
 aur_install "python-pillow-simd"
 aur_install "python-ueberzug"
 
+# for mounting android file system
+aur_install "simple-mtpfs"
+
 # Font fallback
 # aur_install "ttf-symbola"
 

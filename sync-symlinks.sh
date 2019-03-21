@@ -14,7 +14,7 @@ ln -snf $PWD/i3blocks-config ~/.config/i3blocks/config
 
 ln -sfn $PWD/init.vim  ~/.config/nvim/init.vim
 rm -rf ~/.config/fontconfig
-ln -sfn $PWD/fontconfig ~/.config
+ln -sfn $PWD/fontconfig ~/.config/fontconfig
 
 rm -rf ~/.config/vifm
 ln -sfn $PWD/vifm ~/.config
