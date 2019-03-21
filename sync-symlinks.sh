@@ -23,4 +23,7 @@ ln -sfn $PWD/.tmux.conf ~
 
 ln -snf $PWD/.emoji ~/.config/.emoji
 
+rm -rf ~/.config/qutebrowser
+ln -snf $PWD/qutebrowser ~/.config/qutebrowser
+
 echo "Config files linked successfully"

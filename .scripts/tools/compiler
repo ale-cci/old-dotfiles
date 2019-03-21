@@ -32,6 +32,7 @@ case "$file" in
         *\.c) cc "$file" -o "$base" && "$base" ;;
 	*\.cpp) g++ "$file" -o "$base" && "$base" ;;
 	*\.py) python "$file" ;;
+	*\.java) javac "$file" && java "$base" ;;
 	*\.go) go run "$file" ;;
 	*\.sent) setsid sent "$file" 2>/dev/null & ;;
 	*) sed 1q "$file" | grep "^#!/" | sed "s/^#!//" | xargs -r -I % "$file" ;;
