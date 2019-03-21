@@ -1,4 +1,29 @@
 #!/bin/sh
+
+#
+#        _    _       ____           ___           _        _ _
+#       / \  | | ___ / ___|         |_ _|_ __  ___| |_ __ _| | | ___ _ __
+#      / _ \ | |/ _ \ |      _____   | || '_ \/ __| __/ _` | | |/ _ \ '__|
+#     / ___ \| |  __/ |___  |_____|  | || | | \__ \ || (_| | | |  __/ |
+#    /_/   \_\_|\___|\____|         |___|_| |_|___/\__\__,_|_|_|\___|_|
+#
+
+
+function sync_dirs() {
+	# Desktop Folder
+	mkdir -p ~/desk
+	mkdir -p ~/.scripts
+
+	# Download Folder
+	mkdir -p ~/dl
+
+	# Config Directories
+	mkdir -p ~/.config/nvim
+	mkdir -p ~/.config/i3blocks
+	mkdir -p ~/.config/i3
+	mkdir -p ~/.config/fontconfig/conf.d
+}
+
 function g_config() {
 	# Configure Github account
 	echo -n "Do you have a git account [Y/n]: " && read configure
@@ -19,6 +44,10 @@ function g_config() {
 	fi
 }
 
+
+
+### Start of the Script
+
 set -e
 # Use all cores for compilation.
 sudo sed -i "s/-j2/-j$(nproc)/;s/^#MAKEFLAGS/MAKEFLAGS/" /etc/makepkg.conf
@@ -26,7 +55,7 @@ sudo sed -i "s/-j2/-j$(nproc)/;s/^#MAKEFLAGS/MAKEFLAGS/" /etc/makepkg.conf
 grep "^Color" /etc/pacman.conf >/dev/null || sudo sed -i "s/^#Color/Color/" /etc/pacman.conf
 grep "ILoveCandy" /etc/pacman.conf >/dev/null || sudo sed -i "/#VerbosePkgLists/a ILoveCandy" /etc/pacman.conf
 # Download Dependencies
-./sync-dirs.sh
+sync_dirs
 ./sync-packages.sh
 ./sync-symlinks.sh
 
