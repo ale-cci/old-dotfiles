@@ -16,8 +16,7 @@ cd dotfiles
 ---
 
 ### Added Features
-* quick-search nerd fonts emoji
-* markdown preview
+* quick-search Nerd Fonts emoji
 
 ### Upcoming Features:
 * Dropdown list of keybindings
