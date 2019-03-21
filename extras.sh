@@ -11,6 +11,9 @@ rm get-pip.py
 pip install --user requests
 pip install --user bs4
 
+sudo pacman -S\
+	pandoc\
+	texlive-core
 
 # Install all the heavier and low-priority programs, like:
 # - android-studio

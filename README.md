@@ -1,20 +1,27 @@
-## My Dotfiles
+# My Dotfiles
 Heavily inspired by https://github.com/LukeSmithxyz/voidrice
 
-#### Requirements:
+---
+
+### Requirements:
 Internet connection
 
-#### Installer (Working Progress)
+### Installer (Working Progress)
 ```
 git clone https://github.com/ale-cci/dotfiles.git
 cd dotfiles
 ./install.sh
 ```
 
+---
+
+### Added Features
+* quick-search nerd fonts emoji
+* markdown preview
+
 ### Upcoming Features:
-[ ] Add .emoji file for Nerd Font
-[ ] Dropdown list of keybindings
-[ ] Install programs from csv
-[ ] Backup script
-[ ] Markdown preview
-[ ] Screenshots in README.md
+* Dropdown list of keybindings
+* Install programs from csv
+* Backup script
+* Markdown preview
+* Screenshots in README.md

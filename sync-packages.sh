@@ -47,6 +47,7 @@ sudo pacman -S \
 	xorg-xwininfo\
 	xwallpaper\
 	zathura\
+	zathura-pdf-poppler\
 	zsh
 
 export ZSH_CUSTOM="$HOME/.oh-my-zsh/custom"
