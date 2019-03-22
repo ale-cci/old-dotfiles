@@ -4,7 +4,7 @@
 
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/alec/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 export PATH="$PATH:$HOME/.local/bin:$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools:$ANDROID_HOME/emulator"
 # Set name of the theme to load --- if set to "random", it will
@@ -60,11 +60,9 @@ ZSH_THEME="spaceship"
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
+export ZSH_CUSTOM="$HOME/.oh-my-zsh/custom"
 # Which plugins would you like to load?
-plugins=(
-	git,
-	zsh-syntax-highlighting
-)
+plugins=( git zsh-syntax-highlighting)
 source $ZSH/oh-my-zsh.sh
 
 export FILE="vu"
