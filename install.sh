@@ -72,7 +72,7 @@ curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
 nvim -E -c "PlugUpdate|visual|q|q"
 
 systemctl --user enable redshift
-sudo systemctl enable mpd
+systemctl --user enable mpd
 
 # Setting Wallpaper
 cp wall.png ~/.config

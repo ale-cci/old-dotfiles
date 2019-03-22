@@ -1,4 +1,5 @@
-#!/bin/sh
+#!/bin/zsh
+source $HOME/.zshrc
 # Script currently under development
 function deez_install () {
 	cd $HOME
@@ -9,7 +10,7 @@ function deez_install () {
 
 function pack_packages() {
 	sudo pacman -S \
-		chrmoium\
+		chromium\
 		pandoc\
 		texlive-core
 }
@@ -38,4 +39,5 @@ function main(){
 	android_utils
 }
 
-main
+android_utils
+#main

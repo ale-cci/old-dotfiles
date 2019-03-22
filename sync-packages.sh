@@ -63,13 +63,6 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 git clone https://github.com/denysdovhan/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt"
 ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
 
-function powerline_font_installation {
-	# Installing required powerline fonts
-	git clone https://github.com/powerline/fonts.git --depth=1
-	(cd fonts && ./install.sh)
-	rm -rf fonts
-}
-
 # Nerd Font installation
 function font_installation() {
 	svn export https://github.com/ryanoasis/nerd-fonts/trunk/patched-fonts/$1 $1
@@ -78,6 +71,5 @@ function font_installation() {
 	mv $1  ~/.local/share/fonts
 }
 
-powerline_font_installation
 font_installation FiraCode
 font_installation FiraMono
