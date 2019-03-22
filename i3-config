@@ -42,6 +42,7 @@ for_window [instance="dropdown_*"] move position center
 # #--- Default Window locations ---# #
 assign [class="Slack"] $ws10
 assign [title="^.*slack-term"] $ws10
+assign [title="backup"] $ws4
 assign [class="jetbrains-studio"] $ws3
 
 # #---Starting External Scripts---# #
@@ -144,7 +145,7 @@ bindsym $mod+r 			exec $term -e $FILE
 bindsym $mod+Shift+r		exec --no-startup-id winresize
 
 bindsym $mod+t			split toggle
-bindsym $mod+Shift+t		gaps inner current set 15; gaps outer current set 15
+bindsym $mod+Shift+t		bar mode toggle
 
 bindsym $mod+y			exec $term -e calcurse
 bindsym $mod+Shift+y		exec --no-startup-id i3resize left
@@ -207,8 +208,8 @@ bindsym $mod+Shift+x		exec --no-startup-id prompt "Shutdown computer?" "$shutdow
 # bindsym $mod+v			exec --no-startup-id $term -e $EDITOR -c "VimwikiIndex"
 # bindsym $mod+Shift+v
 
-bindsym $mod+b			bar mode toggle
-bindsym $mod+Shift+b		floating toggle; sticky toggle; exec --no-startup-id bottomleft
+bindsym $mod+b		floating toggle; sticky toggle; exec --no-startup-id bottomleft
+bindsym $mod+Shift+b		exec --no-startup-id $term -T backup -e backup; workspace $ws4
 
 # bindsym $mod+n			exec $term -e newsboat && pkill -RTMIN+6 i3blocks
 bindsym $mod+n 		exec --no-startup-id rs-toggle

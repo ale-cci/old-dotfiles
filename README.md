@@ -17,11 +17,12 @@ cd dotfiles
 
 ### Added Features
 * quick-search Nerd Fonts emoji
+* home and downloads on external drive
+
 
 ### Upcoming Features:
 * Dropdown list of keybindings
 * Install programs from csv
-* Backup script
 * neomutt
 * Markdown preview
 * Screenshots in README.md
