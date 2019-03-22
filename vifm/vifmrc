@@ -9,7 +9,7 @@ map <C-s> <C-w>s
 map <C-v> <C-w>v
 
 " file Icons
-set classify='  :dir:/, :exe:,  :reg:,  :link:'
+set classify='  :dir:/,  :exe:,  :reg:,  :link:'
 " various file names
 set classify+='  ::../::,  ::*.sh::,  ::*.[hc]pp::,  ::*.[hc]::,  ::/^copying|license$/::,  ::.git/,,*.git/::,  ::*.epub,,*.fb2,,*.djvu::,  ::*.pdf::,  ::*.htm,,*.html,,**.[sx]html,,*.xml::'
 " archives
@@ -22,7 +22,7 @@ set classify+='  ::*.aac,,*.anx,,*.asf,,*.au,,*.axa,,*.flac,,*.m2a,,*.m4a,,*.
 " media
 set classify+='  ::*.avi,,*.ts,,*.axv,,*.divx,,*.m2v,,*.m4p,,*.m4v,,.mka,,*.mkv,,*.mov,,*.mp4,,*.flv,,*.mp4v,,*.mpeg,,*.mpg,,*.nuv,,*.ogv,,*.pbm,,*.pgm,,*.qt,,*.vob,,*.wmv,,*.xvid::'
 " office files
-set classify+='  ::*.doc,,*.docx::,  ::*.xls,,*.xls[mx]::,  ::*.pptx,,*.ppt::'
+set classify+='  ::*.doc,,*.docx::,  ::*.xls,,*.xls[mx],,*.csv::,  ::*.pptx,,*.ppt::'
 
 map R :restart<CR>
 map x :!sxiv -ft * 2>/dev/null &<CR>

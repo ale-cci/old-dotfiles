@@ -1,25 +1,41 @@
 #!/bin/sh
-
 # Script currently under development
+function deez_install () {
+	cd $HOME
+	git clone https://notabug.org/RemixDevs/DeezloaderRemix.git
 
+	(cd DeezloaderRemix && npm install)
+}
 
-# Install python pip and extra modules
-curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
-python get-pip.py --user
-rm get-pip.py
+function pack_packages() {
+	sudo pacman -S \
+		chrmoium\
+		pandoc\
+		texlive-core
+}
 
-pip install --user requests
-pip install --user bs4
+function python_utils(){
+	# Install python pip and extra modules
+	curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+	python get-pip.py --user
+	rm get-pip.py
 
-sudo pacman -S \
-	chrmoium\
-	pandoc\
-	texlive-core
+	pip install --user requests
+	pip install --user bs4
+}
 
-# Install all the heavier and low-priority programs, like:
-# - android-studio
-aur_install "android-studio"
-aur_install "android-sdk"
-aur_install "android-emulator"
+function android_utils() {
+	aur_install "android-studio"
+	aur_install "android-sdk"
+	aur_install "android-emulator"
 
+}
 
+function main(){
+	python_utils
+	pack_packages
+	deez_install
+	android_utils
+}
+
+main

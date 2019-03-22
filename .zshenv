@@ -11,8 +11,8 @@ export READER="zathura"
 export SUDO_ASKPASS="$HOME/.scripts/tools/dmenupass"
 
 # Project Directories
-export BEIFI_DIR="$HOME/Desktop/membership"
-export BEIFI_MOBILE_DIR="$HOME/Desktop/beifi_mobile"
+export BEIFI_DIR="$HOME/desk/membership"
+export BEIFI_MOBILE_DIR="$HOME/desk/beifi_mobile"
 
 export ANDROID_HOME="$HOME/Android/Sdk"
 export JAVA_HOME="/usr/lib/jvm/default"

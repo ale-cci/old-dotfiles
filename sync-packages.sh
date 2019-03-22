@@ -1,90 +1,40 @@
 #!/bin/bash
 
-# Todo set ubuntu font family
+function aur_install {
+	(cd /tmp && curl -L -O "https://aur.archlinux.org/cgit/aur.git/snapshot/$1.tar.gz")
+	tar -xzf "/tmp/$1.tar.gz" -C /tmp
+	(cd /tmp/$1 && yes | makepkg -si)
+}
+
 # sudo pacman -Syu
+set -e
 
+INPUT=packages.csv
+[ ! -f $INPUT ] && echo "File not found" && exit 1
+PREV_FS=$IFS
+IFS=,
 
-#=======> Official packages <=======#
-sudo pacman -S \
-	android-tools\
-	atool\
-	calcurse\
-	dunst\
-	git\
-	htop\
-	i3-gaps\
-	i3blocks\
-	i3status\
-	libnotify\
-	mpc\
-	mpd\
-	mpv\
-	ncmpcpp\
-	ncurses\
-	neofetch\
-	neovim\
-	networkmanager\
-	pulseaudio-alsa\
-	pulseaudio\
-	pulsemixer\
-	python\
-	rsync\
-	npm\
-	subversion\
-	tmux\
-	unrar\
-	qutebrowser\
-	unzip\
-	vifm\
-	xclip\
-	xcompmgr\
-	xf86-input-libinput\
-	xf86-video-intel\
-	xorg-server\
-	xorg-setxkbmap\
-	xorg-xbacklight\
-	xorg-xinit\
-	xorg-xwininfo\
-	xwallpaper\
-	zathura\
-	zathura-pdf-poppler\
-	zsh
+# sudo pacman --noconfirm -p
+while read repo name description
+do
+	echo "$(echo $repo | sed 's/^P/Pac/;s/^A/Aur/') $name: $description";
+	case $repo in
+		P)
+			# Pacman installation
+			sudo pacman --noconfirm --needed -S $name > /dev/null 2>&1
+			;;
+		A)
+			# Aur installation
+			aur_install "$name" > /dev/null 2>&1
+			;;
+	esac
+done < $INPUT
+
+IFS=$PREV_FS
+
 
 export ZSH_CUSTOM="$HOME/.oh-my-zsh/custom"
 ./oh-my-zsh_install.sh
-
-#=======>   Aur packages    <=======#
-function aur_install {
-	echo "Installing  $1"
-	curl -L -O "https://aur.archlinux.org/cgit/aur.git/snapshot/$1.tar.gz" > /dev/null
-	mv "$1.tar.gz" /tmp
-	tar -xzf "/tmp/$1.tar.gz" -C /tmp
-	(cd /tmp/$1 && yes | makepkg -si > /dev/null 2>&1)
-	echo "Done"
-	echo ""
-}
-
-aur_install "sc-im"
-aur_install "unclutter-xfixes-git"
-
-# Image Viewer
-aur_install "sxiv-git"
-
-# for Vifm Image Preview
-aur_install "python-pillow-simd"
-aur_install "python-ueberzug"
-
-# for mounting android file system
-aur_install "simple-mtpfs"
-
-# Font fallback
-# aur_install "ttf-symbola"
-
-# Redshift
-aur_install "redshift-minimal"
-aur_install "urlscan"
-aur_install "xurls"
-
 
 #=======> Git dependencies  <=======#
 # Installing Suckless terminal and dmenu
@@ -115,8 +65,11 @@ ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/the
 
 
 # Nerd Font installation
-svn export https://github.com/ryanoasis/nerd-fonts/trunk/patched-fonts/FiraCode FiraCode
-mkdir -p ~/.local/share/fonts
+function font_installation() {
+	svn export https://github.com/ryanoasis/nerd-fonts/trunk/patched-fonts/$1 $1
+	mkdir -p ~/.local/share/fonts
 
-mv FiraCode  ~/.local/share/fonts
+	mv $1  ~/.local/share/fonts
+}
 
+font_installation FiraCode
