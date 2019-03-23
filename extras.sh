@@ -12,7 +12,10 @@ function pack_packages() {
 	sudo pacman -S \
 		chromium\
 		pandoc\
-		texlive-core
+		texlive-core\
+		jre8-openjdk\
+		jde8-openjdk\
+		gradle
 }
 
 function python_utils(){
@@ -22,11 +25,14 @@ function python_utils(){
 	rm get-pip.py
 
 	pip install --user requests
+	pip install --user virtualenv
 	pip install --user bs4
 }
 
 function android_utils() {
+	# In android studio the package name is different
 	aur_install "android-studio"
+	# sudo pacman -U android-studio-3...
 	aur_install "android-sdk"
 	aur_install "android-emulator"
 

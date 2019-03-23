@@ -25,5 +25,6 @@ ln -snf $PWD/.emoji ~/.config/.emoji
 
 rm -rf ~/.config/qutebrowser
 ln -snf $PWD/qutebrowser ~/.config/qutebrowser
+ln -snf $PWD/newsboat ~/.config/newsboat
 
 echo "Config files linked successfully"

@@ -326,10 +326,10 @@ bindsym $mod+Shift+Right 	move right
 # bindsym $mod+Shift+plus		exec --no-startup-id lmc up 15
 # bindsym $mod+minus 		exec --no-startup-id lmc down 5
 # bindsym $mod+Shift+minus	exec --no-startup-id lmc down 15
-bindsym $mod+less 		exec --no-startup-id change_volume prev
-bindsym $mod+Shift+less		exec --no-startup-id change_volume replay
-bindsym $mod+greater		exec --no-startup-id change_volume next
-bindsym $mod+Shift+greater	exec --no-startup-id change_volume next
+bindsym $mod+less 		exec --no-startup-id mpc_wrapper prev
+bindsym $mod+Shift+less		exec --no-startup-id mpc_wrapper replay
+bindsym $mod+greater		exec --no-startup-id mpc_wrapper next
+bindsym $mod+Shift+greater	exec --no-startup-id mpc_wrapper next
 
 # For advancing forward/backward in an mpd song
 # bindsym $mod+bracketleft 	exec --no-startup-id lmc back 10
@@ -347,11 +347,11 @@ bindsym XF86Launch1		exec --no-startup-id xset dpms force off
 
 # #---Extra XF86 Keys---# #
 # These are the extra media keys that some keyboards have.
-bindsym XF86AudioMute		exec --no-startup-id change_volume mute
-bindsym XF86AudioLowerVolume	exec --no-startup-id change_volume down 5
-bindsym Shift+XF86AudioLowerVolume	exec --no-startup-id change_volume down 5
-bindsym XF86AudioRaiseVolume	exec --no-startup-id change_volume up 5
-bindsym Shift+XF86AudioRaiseVolume	exec --no-startup-id change_volume up 5
+bindsym XF86AudioMute		exec --no-startup-id volume_controller mute
+bindsym XF86AudioLowerVolume	exec --no-startup-id volume_controller down 5
+bindsym Shift+XF86AudioLowerVolume	exec --no-startup-id volume_controller down 5
+bindsym XF86AudioRaiseVolume	exec --no-startup-id volume_controller up 5
+bindsym Shift+XF86AudioRaiseVolume	exec --no-startup-id volume_controller up 5
 bindsym XF86PowerOff		exec --no-startup-id prompt "Shutdown computer?" "$shutdown"
 ##bindsym XF86Copy		exec
 ##bindsym XF86Open		exec
@@ -374,13 +374,13 @@ bindsym XF86MyComputer		exec $term -e $FILE
 ##bindsym XF86Back		exec
 ##bindsym XF86Forward		exec
 bindsym XF86Eject		exec --no-startup-id dmenuumount
-bindsym XF86AudioNext		exec --no-startup-id change_volume next
-bindsym XF86AudioPlay		exec --no-startup-id change_volume toggle
-bindsym XF86AudioPrev		exec --no-startup-id change_volume prev
-bindsym XF86AudioStop		exec --no-startup-id change_volume toggle
+bindsym XF86AudioNext		exec --no-startup-id mpc_wrapper next
+bindsym XF86AudioPlay		exec --no-startup-id mpc_wrapper toggle
+bindsym XF86AudioPrev		exec --no-startup-id mpc_wrapper prev
+bindsym XF86AudioStop		exec --no-startup-id mpc_wrapper toggle
 ##bindsym XF86AudioRecord
-bindsym XF86AudioRewind		exec --no-startup-id change_volume back 10
-bindsym XF86AudioForward	exec --no-startup-id change_volume forward 10
+bindsym XF86AudioRewind		exec --no-startup-id mpc_wrapper back 10
+bindsym XF86AudioForward	exec --no-startup-id mpc_wrapper forward 10
 ##bindsym XF86Phone		exec
 ##bindsym XF86Tools		exec
 bindsym XF86HomePage		exec $BROWSER https://lukesmith.xyz

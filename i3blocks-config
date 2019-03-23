@@ -5,7 +5,12 @@ markup=pango
 
 [music]
 interval=once
-signal=11
+signal=10
+
+[news]
+label=
+interval=once
+signal=12
 
 [disk]
 command=disk /dev/nvme0n1p2 SSD
@@ -22,7 +27,7 @@ signal=5
 
 [volume]
 interval=once
-signal=10
+signal=11
 
 [battery]
 command=battery BAT0

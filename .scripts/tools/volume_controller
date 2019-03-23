@@ -1,0 +1,35 @@
+#!/usr/bin/env sh
+
+MSG_ID="991049"
+
+function prog {
+	data=$1
+	max_ticks=10
+	ticks=$(($data / $max_ticks ))
+	echo "$(printf "%*s" $ticks "" | sed "s/ /■/g")$(printf "%*s" $(($max_ticks-$ticks)) "" | sed "s/ /□/g")"
+}
+
+[ -z "$2" ] && num="2" || num="$2"
+
+case "$1" in
+	u*) pulsemixer --change-volume +"$num" ;;
+	d*) pulsemixer --change-volume -"$num" ;;
+	m*) pulsemixer --toggle-mute ;;
+	truemute) pulsemixer --mute ;;
+esac
+
+volume=$(pulsemixer --get-volume | awk '{print int($1/1.5)}')
+
+if [[ $(pulsemixer --get-mute) == 1 ]]; then
+	# Show the sound muted notification
+	dunstify -a "changeVolume" -u low -i audio-volume-muted -r "$MSG_ID" "<span color='$(xrdb -query | awk '/color9/{print $2}')'> Volume muted</span>"
+else
+	# Play the volume changed sound
+	canberra-gtk-play -i audio-volume-change -d "changeVolume"
+
+	# Show the volume notification
+	dunstify -a "changeVolume" -u low -i audio-volume-high -r "$MSG_ID" " $(prog $volume)"
+fi
+
+
+pkill -RTMIN+11 i3blocks
