@@ -3,10 +3,14 @@ Heavily inspired by https://github.com/LukeSmithxyz/voidrice
 
 ---
 
-### Requirements:
+
+### Installer (Working Progress):
+Installer script, to run after a clean Arch Linux installation.
+Currently tested only with networkmanager already active and zsh installed
+
+##### Requirements:
 Internet connection
 
-### Installer (Working Progress)
 ```
 git clone https://github.com/ale-cci/dotfiles.git
 cd dotfiles
