@@ -15,7 +15,13 @@ function pack_packages() {
 		texlive-core\
 		jre8-openjdk\
 		jde8-openjdk\
-		gradle
+		youtube-viewer\
+		gradle\
+		php\
+		composer\
+		openssh\
+		sshpass
+
 }
 
 function python_utils(){

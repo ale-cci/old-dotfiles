@@ -202,7 +202,7 @@ bindsym $mod+Shift+x		exec --no-startup-id prompt "Shutdown computer?" "$shutdow
 
 # Recording Options
 # bindsym $mod+c			exec --no-startup-id freealf
-# bindsym $mod+Shift+c		exec --no-startup-id camtoggle
+bindsym $mod+Shift+c		exec --no-startup-id slack ; workspace $ws10
 # bindsym $mod+Shift+c 	exec --no-statup-id typetrain
 
 # bindsym $mod+v			exec --no-startup-id $term -e $EDITOR -c "VimwikiIndex"
@@ -211,8 +211,8 @@ bindsym $mod+Shift+x		exec --no-startup-id prompt "Shutdown computer?" "$shutdow
 bindsym $mod+b		floating toggle; sticky toggle; exec --no-startup-id bottomleft
 bindsym $mod+Shift+b		exec --no-startup-id $term -T backup -e backup; workspace $ws4
 
-# bindsym $mod+n			exec $term -e newsboat && pkill -RTMIN+6 i3blocks
-bindsym $mod+n 		exec --no-startup-id rs-toggle
+bindsym $mod+n			exec $term -e newsboat && pkill -RTMIN+6 i3blocks
+# bindsym $mod+n 		exec --no-startup-id rs-toggle
 
 bindsym $mod+Shift+n		floating toggle; sticky toggle; exec --no-startup-id bottomright
 

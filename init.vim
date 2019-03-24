@@ -18,7 +18,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'tpope/vim-commentary'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'vifm/vifm.vim'
-Plug 'jreybert/vimagit'
+Plug 'tpope/vim-fugitive'
 " Plug 'mattn/emmet-vim'
 
 " Colorscheme
@@ -156,3 +156,4 @@ function! Gliph()
 	normal! "gP
 endfunction
 nnoremap gi :call Gliph()<cr>
+nnoremap <Leader>t :CtrlPTag<cr>

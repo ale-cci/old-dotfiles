@@ -10,7 +10,7 @@ signal=10
 [news]
 label=
 interval=once
-signal=12
+signal=6
 
 [disk]
 command=disk /dev/nvme0n1p2 SSD

@@ -99,3 +99,4 @@ alias cscripts="cd ~/Desktop/py_scripts"
 alias cpy="rsync -rh --info=progress2"
 
 alias starwars="telnet towel.blinkenlights.nl"
+
