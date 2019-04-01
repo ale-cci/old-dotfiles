@@ -40,10 +40,17 @@ for_window [instance="dropdown_tmuxdd"] border pixel 2
 for_window [instance="dropdown_*"] move position center
 
 # #--- Default Window locations ---# #
+# 1:Random
+# 2:Browsing
+assign [class="qutebrowser"] $ws2
+# 3:Workspace
+assign [class="jetbrains-studio"] $ws3
+# 4:Heavy jobs
+assign [title="backup"] $ws4
+# 5:Art related stuff like image editing
+# 10:Slack
 assign [class="Slack"] $ws10
 assign [title="^.*slack-term"] $ws10
-assign [title="backup"] $ws4
-assign [class="jetbrains-studio"] $ws3
 
 # #---Starting External Scripts---# #
 # mpd startup
@@ -135,7 +142,7 @@ bindsym $mod+Pause		exec --no-startup-id xcqr
 bindsym $mod+q			[con_id="__focused__" instance="^(?!dropdown_).*$"] kill
 bindsym $mod+Shift+q		[con_id="__focused__" instance="^(?!dropdown_).*$"] kill
 
-bindsym $mod+w		exec --no-startup-id $BROWSER
+bindsym $mod+w		exec --no-startup-id $BROWSER; workspace $ws2
 bindsym $mod+Shift+w			exec --no-startup-id chromium
 
 bindsym $mod+e			exec $term -e neomutt && pkill -RTMIN+12 i3blocks
@@ -161,7 +168,7 @@ bindsym $mod+o			sticky toggle
 bindsym $mod+Shift+o		exec --no-startup-id i3resize right
 
 # bindsym $mod+p			exec --no-startup-id lmc toggle
-# bindsym $mod+Shift+p		exec --no-startup-id lmc pause
+bindsym $mod+Shift+p		exec --no-startup-id mpc_wrapper toggle
 
 bindsym $mod+Control+a		exec --no-startup-id android-studio
 bindsym $mod+Shift+a		exec $term -e pulsemixer

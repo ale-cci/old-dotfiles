@@ -2,25 +2,40 @@
 
 case $BLOCK_BUTTON in
 	1) $TERMINAL -e nmtui ;;
-	3) pgrep -x dunst >/dev/null && notify-send "<b> Internet module:</b>
-- Click for \`nmtui\` for wifi access
-睊: no wifi connection
-: wifi connection with quality
-: no ethernet
-: ethernet working
-" ;;
+	3) pgrep -x dunst >/dev/null && notify-send "$(nmcli device show wlp2s0 | awk '/CONNECTION/{print $2};/HWADDR/{print $2};/IP4\.ADDRESS/{print $2}')" ;;
+	# 3) pgrep -x dunst >/dev/null && notify-send "<b> Internet module:</b>
+# - Click for \`nmtui\` for wifi access
+# 睊: no wifi connection
+# : wifi connection with quality
+# : no ethernet
+# : ethernet working
+# " ;;
 esac
 
-[ "$(cat /sys/class/net/w*/operstate)" = 'down' ] && wifiicon="睊"
+# state: connecting, connected disconnected
+state="$(nmcli general | awk 'END{print $1}')"
+case $state in
+	connecting) wifiicon=" --%" ;;
+
+	connected)
+		strength="$(grep "^\s*w" /proc/net/wireless | awk '{print int($3*100/70)}')"
+		[ ! $strength ] && strength=0
+		wifiicon=" $strength%" ;;
+
+	disconnected) wifiicon="睊" ;;
+
+	*) wifiicon="$state";;
+esac
+
+# [ "$(cat /sys/class/net/w*/operstate)" = 'down' ] && wifiicon="睊"
 
 
 
-strength="$(grep "^\s*w" /proc/net/wireless | awk '{print int($3*100/70)}')"
-
-[ ! $strength ] && strength=0
+# strength="$(grep "^\s*w" /proc/net/wireless | awk '{print int($3*100/70)}')"
 
 
 
-[ ! -n "${wifiicon+var}" ] && wifiicon=" $strength%"
+
+# [ ! -n "${wifiicon+var}" ] && wifiicon=" $strength%"
 
 printf "%s %s" "$wifiicon" "$(cat /sys/class/net/e*/operstate | sed "s/down/睊/;s/up//")"

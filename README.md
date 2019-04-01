@@ -8,9 +8,10 @@ Heavily inspired by https://github.com/LukeSmithxyz/voidrice
 Installer script, to run after a clean Arch Linux installation.
 Currently tested only with networkmanager already active and zsh installed
 
-##### Requirements:
+#### Requirements:
 Internet connection
 
+#### Commands:
 ```
 git clone https://github.com/ale-cci/dotfiles.git
 cd dotfiles

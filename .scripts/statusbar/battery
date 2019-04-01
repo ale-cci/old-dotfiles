@@ -6,12 +6,12 @@
 for x in "$(xrdb -query | grep color | sed "s/\*color\([0-9]*\):\s*#\([0-9a-fA-F]*\)/color\1=\"#\2\"/g")" ; do eval "$x"; done
 
 case $BLOCK_BUTTON in
-    3) pgrep -x dunst >/dev/null && notify-send "<b> Battery module:</b>
-: not charging
-: stagnant charge
-: charging
-: battery very low!
-" ;;
+	3) pgrep -x dunst >/dev/null && notify-send "<b> Battery module:</b>
+		: not charging
+		: stagnant charge
+		: charging
+		: battery very low!
+		" ;;
 esac
 
 capacity=$(cat /sys/class/power_supply/"$1"/capacity) || exit
@@ -29,16 +29,10 @@ fi
 
 [ "$status" = "Charging" ] && color="$color15"
 
-# Battery Levels
-# ""
-# ""
-# ""
-# ""
-# ""
-
 case $(echo "$status" | sed -e "s/,//") in
 	Discharging)
-		ic_list=("" "" "" "" "" "" "" "" "" "")
+		ic_list=("" "" "" "" "")
+		# ic_list=("" "" "" "" "" "" "" "" "" "")
 		nof_icons="${#ic_list[@]}"
 		ic_index=$(($capacity * $nof_icons / 100))
 		ic_index=$(($ic_index==$nof_icons?$nof_icons-1:$ic_index))
@@ -60,14 +54,14 @@ case $(echo "$status" | sed -e "s/,//") in
 		icon=""
 		;;
 	Full)
-		icon=""
+		icon=""
 		;;
 
-esac
+	esac
 
 
 
-printf "<span color='%s'>%s %s</span>" \
+	printf "<span color='%s'>%s %s</span>" \
 		"$color" \
 		"$icon"\
 		"$(echo "$capacity" | sed -e 's/$/%/')"

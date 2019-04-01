@@ -27,9 +27,10 @@ twoscreen() { # If multi-monitor is selected and there are two screens.
         scale_x=$(echo "$res_ext_x / $res_int_x" | bc -l)
         scale_y=$(echo "$res_ext_y / $res_int_y" | bc -l)
 
+		# echo "${external}x$res_external $res_internal"
         xrandr --output "$external" --auto --scale 1.0x1.0 \
             --output "$internal" --auto --same-as "$external" \
-            --scale "$scale_x"x"$scale_y"
+            --scale "${scale_x}x$scale_y"
     else
 
         primary=$(echo "$screens" | dmenu -i -p "Select primary display:")
