@@ -5,6 +5,12 @@
 autocmd! BufWritePost init.vim source %
 autocmd BufWritePost .Xresources !xrdb %
 
+" Auto-Delete trailing whitespace on save
+autocmd BufWritePre * %s/\s\+$//e
+
+" Disable autocomment
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+
 
 let mapleader=','
 
@@ -73,7 +79,7 @@ set undolevels=700
 set history=700
 set relativenumber
 
-" For god sake, no backup file
+" No backup file
 set noswapfile
 set nobackup
 set nowritebackup
@@ -110,8 +116,6 @@ noremap <Right> <Nop>
 noremap <Up> <Nop>
 noremap <Down> <Nop>
 
-" Auto-Delete trailing whitespace on save
-autocmd BufWritePre * %s/\s\+$//e
 
 let scroll_duration=6
 nnoremap <silent> <c-m-k> :call smooth_scroll#up(&scroll, scroll_duration, 2)<cr>

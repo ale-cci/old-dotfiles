@@ -1,6 +1,6 @@
 #!/bin/sh
 
-export PATH="$PATH:$(du "$HOME/.scripts/" | cut -f2 | tr '\n' ':' | sed 's/:*$//')"
+export PATH="$PATH:$HOME/Android/Sdk/emulator:$(du "$HOME/.scripts/" | cut -f2 | tr '\n' ':' | sed 's/:*$//')"
 
 export EDITOR="nvim"
 export TERMINAL="st"
@@ -12,9 +12,10 @@ export SUDO_ASKPASS="$HOME/.scripts/tools/dmenupass"
 
 # Project Directories
 export BEIFI_DIR="$HOME/desk/membership"
-export BEIFI_MOBILE_DIR="$HOME/desk/beifi_mobile"
+export BEIFI_MOBILE_DIR="$HOME/desk/membership_app"
 
 export ANDROID_HOME="$HOME/Android/Sdk"
+export ANDROID_SDK_HOME="$HOME"
 export JAVA_HOME="/usr/lib/jvm/default"
 
 export LANG=en_US.UTF-8

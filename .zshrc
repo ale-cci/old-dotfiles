@@ -6,7 +6,7 @@
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
-export PATH="$PATH:$HOME/.local/bin:$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools:$ANDROID_HOME/emulator"
+export PATH="$PATH:$HOME/.local/bin"
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
@@ -94,7 +94,7 @@ alias xconfig="$EDITOR ~/.Xresources"
 
 alias cbeifi="cd $BEIFI_DIR"
 alias cmob="cd $BEIFI_MOBILE_DIR"
-alias capex="cd ~/Desktop/al_stats"
+alias capex="cd ~/desk/al_stats"
 alias cscripts="cd ~/Desktop/py_scripts"
 alias cpy="rsync -rh --info=progress2"
 

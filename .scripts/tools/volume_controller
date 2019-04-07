@@ -22,7 +22,7 @@ volume=$(pulsemixer --get-volume | awk '{print int($1/1.5)}')
 
 if [[ $(pulsemixer --get-mute) == 1 ]]; then
 	# Show the sound muted notification
-	dunstify -a "changeVolume" -u low -i audio-volume-muted -r "$MSG_ID" "<span color='$(xrdb -query | awk '/color9/{print $2}')'> Volume muted</span>"
+	dunstify -a "changeVolume" -u low -r "$MSG_ID" "<span color='$(xrdb -query | awk '/color9/{print $2}')'> Volume muted</span>"
 else
 	# Play the volume changed sound
 	canberra-gtk-play -i audio-volume-change -d "changeVolume"
