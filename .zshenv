@@ -4,7 +4,7 @@ export PATH="$PATH:$HOME/Android/Sdk/emulator:$(du "$HOME/.scripts/" | cut -f2 |
 
 export EDITOR="nvim"
 export TERMINAL="st"
-export BROWSER="qutebrowser"
+export BROWSER="chromium"
 export FILE="vu"
 export READER="zathura"
 

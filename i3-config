@@ -18,7 +18,7 @@
 font pango:mono 10
 
 for_window [class="^.*"] border pixel 2
-gaps inner 5
+gaps inner 0
 gaps outer 0
 set $term --no-startup-id $TERMINAL
 set $mod Mod4
@@ -139,8 +139,8 @@ bindsym $mod+Insert		exec --no-startup-id showclip
 bindsym $mod+Pause		exec --no-startup-id xcqr
 
 # #---Letter Key Bindings---# #
-bindsym $mod+q			[con_id="__focused__" instance="^(?!dropdown_).*$"] kill
-bindsym $mod+Shift+q		[con_id="__focused__" instance="^(?!dropdown_).*$"] kill
+# bindsym $mod+q				[con_id="__focused__" instance="^(?!dropdown_).*$"] kill
+# bindsym $mod+Shift+q		[con_id="__focused__" instance="^(?!dropdown_).*$"] kill
 
 bindsym $mod+w		exec --no-startup-id $BROWSER; workspace $ws2
 bindsym $mod+Shift+w			exec --no-startup-id chromium
@@ -209,7 +209,7 @@ bindsym $mod+Shift+x		exec --no-startup-id prompt "Shutdown computer?" "$shutdow
 
 # Recording Options
 # bindsym $mod+c			exec --no-startup-id freealf
-bindsym $mod+Shift+c		exec --no-startup-id slack ; workspace $ws10
+bindsym $mod+Shift+c		[con_id="__focused__" instance="^(?!dropdown_).*$"] kill
 # bindsym $mod+Shift+c 	exec --no-statup-id typetrain
 
 # bindsym $mod+v			exec --no-startup-id $term -e $EDITOR -c "VimwikiIndex"
@@ -246,16 +246,16 @@ bindsym $mod+slash		split vertical ;; exec $term
 bindsym $mod+Shift+slash	kill
 bindsym $mod+backslash		workspace back_and_forth
 
-set $ws1 "1:"
-set $ws2 "2:"
-set $ws3 "3:"
-set $ws4 "4:"
-set $ws5 "5:"
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
 set $ws6 "6"
 set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9"
-set $ws10 "10:"
+set $ws10 "10"
 
 # Autostart program list
 # exec --no-startup-id i3-msg 'Slack; exec ~/.local/bin/slack-term'
